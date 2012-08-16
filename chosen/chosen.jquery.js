@@ -959,10 +959,12 @@ Copyright (c) 2011 by Harvest
       create_option_html = $('<li class="create-option active-result"><a href="javascript:void(0);">' + this.create_option_text + '</a>: "' + terms + '"</li>').bind("click", function(evt) {
         return _this.select_create_option(terms);
       });
+      this.search_results.addClass("show-create-option");
       return this.search_results.append(create_option_html);
     };
 
     Chosen.prototype.create_option_clear = function() {
+      this.search_results.removeClass("show-create-option");
       return this.search_results.find(".create-option").remove();
     };
 
